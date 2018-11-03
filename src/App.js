@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Header from "./components/Header";
-//import Select from 'react-select'
 import './App.css';
 
 class App extends Component {
@@ -39,42 +38,18 @@ getadd = () => {
   }
 
   addIncome = (description,amount) => {
-      //const newincomes = this.incomes.push({description: description, amount: amount}) ;  
+       
     this.setState({
     incomes: [...this.state.incomes,{description: description, amount: Number(amount)}]
   });
   }
 
   addExpense = (description,amount) => {
-    //const newincomes = this.incomes.push({description: description, amount: amount}) ;  
+     
   this.setState({
   expenses: [...this.state.expenses,{description: description, amount: Number(amount)}]
 });
 }
-
-
-/*calculateTotal = (accumulator, currentValue) => {
-  return this.state.accumulator + (currentValue.amount);
-}*/
-
-
-/*totalIncome = () => {
-    const incomes1 =  this.state.incomes.reduce((sum, i) => (sum +=  i.amount), 0);
-    this.setState({
-      incomes: incomes1,
-    });
-  }*/
-
-
-/*totalExpense = () => {        
-    const expenses1 = this.state.expenses.reduce((sum, i) => (sum +=  i.amount), 0);
-    this.setState({
-      expenses: expenses1,
-    });
-    console.log(expenses1)
-  }*/
-
-  
 
   
 render() {
@@ -85,8 +60,6 @@ render() {
       
        return <li className="align" key={i}>{income.description} {income.amount} </li>
     });
-
-    
 
 
     const totalincome = this.state.incomes.reduce((sum, i) => (sum +=  i.amount), 0)
@@ -99,24 +72,6 @@ render() {
    const totalexpenses = this.state.expenses.reduce((sum, i) => (sum +=  i.amount), 0)
 
    const balance = totalincome - totalexpenses;
-
-   /*const Totalincomes = ({ incomes}) => ( 
-    <h3>
-      Totalincomes:
-      {incomes.reduce((sum, i) => (sum +=  i.amount), 0)}
-    </h3> 
-   )*/
-  
-    
-   /*const Totalexpenses = ({expenses}) => ( 
-    <h3>
-      TotalExpenses:
-      {expenses.reduce((sum, i) => (sum +=  i.amount), 0)}
-    </h3>
-   )*/
-  
-  
-   
      
    
 return (
@@ -140,11 +95,11 @@ return (
 
       <div className="incomeresult">
       <p id="incomeParagraph">Incomes</p>
-      <hr width="40%" align="CENTER" id="textIncome"></hr>
+      <hr width="90%" align="CENTER" id="textIncome"></hr>
       
          {incomeresult}  
          
-         <h3>Totalincomes:{totalincome}</h3>
+         <h3>Totalincome: {totalincome}</h3>
       </div>
       
      
@@ -152,9 +107,9 @@ return (
 
       <div className="expenseresult">
       <p id="expenseParagraph">Expenses</p>
-      <hr width="60%" align="CENTER" id="textExpense"></hr>
+      <hr width="90%" align="CENTER" id="textExpense"></hr>
         {expenseresult}
-        <h3>Totalexpenses:{totalexpenses }</h3>  
+        <h3>Totalexpense: {totalexpenses }</h3>  
       </div> 
   </div>
   <div className="balance">

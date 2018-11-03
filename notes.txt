@@ -1,0 +1,14 @@
+ /*const Totalincomes = ({ incomes}) => ( 
+    <h3>
+      Totalincomes:
+      {incomes.reduce((sum, i) => (sum +=  i.amount), 0)}
+    </h3> 
+   )*/
+  
+    
+   /*const Totalexpenses = ({expenses}) => ( 
+    <h3>
+      TotalExpenses:
+      {expenses.reduce((sum, i) => (sum +=  i.amount), 0)}
+    </h3>
+   )*/
