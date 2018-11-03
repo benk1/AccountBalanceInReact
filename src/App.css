@@ -1,0 +1,70 @@
+.App {
+  text-align: center;
+}
+
+.incomes{
+  display: flex;
+  /*flex-direction: column;*/
+  font-size: 16px;
+}
+
+.expenses{
+  display: flex;
+  /*flex-direction: column;*/
+  font-size: 16px;
+}
+
+.incomeexpensediv{
+  display: flex;
+  margin-top: 80px;
+  justify-content: space-between;
+  font-size: 16px;
+}
+
+input[type=text],[type=number] {
+  padding: 0;
+  height: 30px;
+  outline: none;
+  border: 3px solid #cdcdcd;
+  border-color: rgba(0,0,0,.15);
+  background-color:aliceblue;
+  font-size: 16px;
+}
+
+select{
+  padding: 0;
+  height: 30px;
+  outline: none;
+  border: 3px solid #cdcdcd;
+  border-color: rgba(0,0,0,.15);
+  background-color:aliceblue;
+  font-size: 16px;
+}
+
+button{
+  padding: 0;
+  height: 30px;
+  outline: none;
+  border: 3px solid #cdcdcd;
+  border-color: rgba(0,0,0,.15);
+  background-color:aliceblue;
+  font-size: 16px;
+}
+.incomeresult{
+  font-size: 16px;
+}
+.expenseresult{
+  font-size: 16px;
+}
+p{
+  font-size: 16px;
+}
+
+li.align{
+  list-style-position: outside;
+  /*list-style-type: none;
+  margin: 0;
+  padding: 0;*/
+  text-align: left;
+  
+}
