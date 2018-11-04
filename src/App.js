@@ -34,18 +34,20 @@ getadd = () => {
   }else if((this.state.transaction === "Income")){
     this.addIncome(this.state.description, this.state.amount);
   }
+  this.refs.desc.value = "";
+  this.refs.amou.value = "";
   
   }
 
   addIncome = (description,amount) => {
-       
+    
     this.setState({
     incomes: [...this.state.incomes,{description: description, amount: Number(amount)}]
   });
   }
 
   addExpense = (description,amount) => {
-     
+  
   this.setState({
   expenses: [...this.state.expenses,{description: description, amount: Number(amount)}]
 });
@@ -76,11 +78,11 @@ render() {
    
 return (
 <div className="App">
-      <Header  />
-    
-      <input name="description" value={description} type="text"   placeholder="Enter description" onChange={this.handleChange}/>
+      <Header title="Account Balance" />
+    <div className="container">
+      <input name="description" value={description} type="text" ref="desc"  placeholder="Enter description" onChange={this.handleChange}/>
 
-      <input name="amount" value={amount} type="number"   placeholder="Enter the Amount" onChange={this.handleChange}/>
+      <input name="amount" value={amount} type="number" ref="amou"  placeholder="Enter the Amount" onChange={this.handleChange}/>
 
       <select name="transaction" value={this.state.value} onChange={this.handleChange}>
         <option value="Income" id="1">Income</option>
@@ -95,7 +97,7 @@ return (
 
       <div className="incomeresult">
       <p id="incomeParagraph">Incomes</p>
-      <hr width="90%" align="CENTER" id="textIncome"></hr>
+      <hr color="green" width="90%" align="CENTER" id="textIncome"></hr>
       
          {incomeresult}  
          
@@ -103,20 +105,21 @@ return (
       </div>
       
      
-        
-
       <div className="expenseresult">
       <p id="expenseParagraph">Expenses</p>
-      <hr width="90%" align="CENTER" id="textExpense"></hr>
+      <hr color="green" width="90%" align="CENTER" id="textExpense"></hr>
         {expenseresult}
         <h3>Totalexpense: {totalexpenses }</h3>  
       </div> 
+
   </div>
+
   <div className="balance">
-  <h3>Balance</h3>
-  <hr width="20%" align="CENTER" id="balance"></hr>
-  <h3>Net: {balance}</h3>
-  </div>     
+  <h2>Balance</h2>
+  <hr color="green" width="20%" align="CENTER" id="balance"></hr>
+  <h2>Net: {balance}</h2>
+  </div>  
+  </div>
 </div>
     
     );

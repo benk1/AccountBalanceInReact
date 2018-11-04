@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.header{
+  color: green;
+}
+
 .incomes{
   display: flex;
   /*flex-direction: column;*/
@@ -57,7 +61,7 @@ button{
   font-size: 16px;
 }
 p{
-  font-size: 16px;
+  font-size: 20px;
 }
 
 li.align{
@@ -67,4 +71,18 @@ li.align{
   padding: 0;*/
   text-align: left;
   
+}
+h3{
+  padding: 0;
+  height: 30px;
+  outline: none;
+  border: 3px solid #cdcdcd;
+  border-color: rgba(0,0,0,.15);
+  background-color:aliceblue;
+  font-size: 16px;
+  line-height: 30px;
+}
+
+li{
+  font-size: 20px;
 }
