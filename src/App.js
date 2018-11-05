@@ -78,8 +78,8 @@ render() {
    
 return (
 <div className="App">
-      <Header title="Account Balance" />
-    <div className="container">
+    <Header title="Account Balance" />
+  <div className="container">
       <input name="description" value={description} type="text" ref="desc"  placeholder="Enter description" onChange={this.handleChange}/>
 
       <input name="amount" value={amount} type="number" ref="amou"  placeholder="Enter the Amount" onChange={this.handleChange}/>
@@ -93,32 +93,30 @@ return (
 
        
 
-  <div className="incomeexpensediv">
+    <div className="incomeexpensediv">
 
       <div className="incomeresult">
-      <p id="incomeParagraph">Incomes</p>
-      <hr color="green" width="90%" align="CENTER" id="textIncome"></hr>
-      
-         {incomeresult}  
-         
-         <h3>Totalincome: {totalincome}</h3>
+        <p id="incomeParagraph">Incomes</p>
+        <hr color="green" width="90%" align="CENTER" id="textIncome"></hr>
+        {incomeresult}  
+        <h3>Totalincome: {totalincome}</h3>
       </div>
       
      
       <div className="expenseresult">
-      <p id="expenseParagraph">Expenses</p>
-      <hr color="green" width="90%" align="CENTER" id="textExpense"></hr>
-        {expenseresult}
-        <h3>Totalexpense: {totalexpenses }</h3>  
+         <p id="expenseParagraph">Expenses</p>
+         <hr color="green" width="90%" align="CENTER" id="textExpense"></hr>
+         {expenseresult}
+         <h3>Totalexpense: {totalexpenses }</h3>  
       </div> 
 
-  </div>
+    </div>
 
-  <div className="balance">
-  <h2>Balance</h2>
-  <hr color="green" width="20%" align="CENTER" id="balance"></hr>
-  <h2>Net: {balance}</h2>
-  </div>  
+     <div className="balance">
+       <h2>Balance</h2>
+       <hr color="green" width="20%" align="CENTER" id="balance"></hr>
+       <h2>Net: {balance}</h2>
+     </div>  
   </div>
 </div>
     
