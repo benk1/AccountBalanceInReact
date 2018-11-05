@@ -12,3 +12,6 @@
       {expenses.reduce((sum, i) => (sum +=  i.amount), 0)}
     </h3>
    )*/
+
+const incomes = this.state.incomes.slice();
+    incomes.push({description, amount})
