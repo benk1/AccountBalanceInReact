@@ -30,6 +30,7 @@ class App extends Component {
       description: ""
     })
   }
+
 getadd = () => {
   this.clearFields();
   if(this.state.transaction === "Expense"){
@@ -42,14 +43,12 @@ getadd = () => {
   }
   
   addIncome = (description,amount) => {
- 
     this.setState({
     incomes: [...this.state.incomes,{description: description, amount: Number(amount)}]
   });
   }
 
   addExpense = (description,amount) => {
-  
   this.setState({
   expenses: [...this.state.expenses,{description: description, amount: Number(amount)}]
 });
@@ -82,9 +81,9 @@ return (
 <div className="App">
     <Header title="Account Balance" />
   <div className="container">
-      <input name="description" value={description} type="text" ref="desc"  placeholder="Enter description" onChange={this.handleChange}/>
+      <input name="description" value={description} type="text"   placeholder="Enter description" onChange={this.handleChange}/>
  
-      <input name="amount" value={amount} type="number" ref="amou"  placeholder="Enter the Amount" onChange={this.handleChange}/>
+      <input name="amount" value={amount} type="number"  placeholder="Enter the Amount" onChange={this.handleChange}/>
 
       <select name="transaction" value={this.state.value} onChange={this.handleChange}>
         <option value="Income" id="1">Income</option>

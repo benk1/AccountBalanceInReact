@@ -15,3 +15,103 @@
 
 const incomes = this.state.incomes.slice();
     incomes.push({description, amount})
+
+API IN REACT NOTES 05/11/2018
+
+import React, {Component} from 'react';
+import './App.css';
+
+//Mount, Updating , unMounting phases
+// Some component life cycles are depricated or change
+
+const Coins = props => {
+  const coins = props.coins != null
+    ? props.coins.map (coin => {
+        return (
+          <div key={coin.id} className="coin">
+            <h1>{coin.name}</h1>
+            <h2>{Number (coin.price_usd).toFixed (2)}</h2>
+            <h2>{coin.rank}</h2>
+            <h2>{coin.symbol}</h2>
+          </div>
+        );
+      })
+    : <div> <h1>Loading.....</h1></div>;
+
+  return coins;
+};
+
+const Count = ({count, addOne, minOne}) => (
+  <div>
+    <h1>{count}</h1>
+    <button onClick={addOne}>+1</button>
+    <button onClick={minOne}>-1</button>
+  </div>
+);
+
+class App extends Component {
+  state = {
+    count: 0,
+    coins: null,
+  };
+  componentWillMount () {
+    console.log ('log will mount');
+  }
+  componentDidMount () {
+    const url = 'https://api.coinmarketcap.com/v1/ticker/?limit=2000';
+    fetch (url).then (response => response.json ()).then (coins => {
+      this.setState ({
+        coins: coins,
+      });
+    });
+    console.log ('Component did mount log');
+  }
+  componentDidUpdate (prevProps, prevState) {
+    console.log ('Component did update');
+    console.log (prevState.count);
+  }
+  shouldComponentUpdate (nextProps, nextState) {
+    console.log ('Value from next state: ', nextState.count);
+    console.log ('logging from should component update method');
+    if (nextState.count >= 6) {
+      return false;
+    }
+    return true;
+  }
+  addOne = () => {
+    this.setState (prevState => ({
+      count: prevState.count + 1,
+    }));
+  };
+  minOne = () => {
+    this.setState ({
+      count: this.state.count - 1,
+    });
+  };
+  render () {
+    const coins = this.state.coins;
+    console.log (coins);
+    // console.log (coins.length);
+
+    console.log ('Loging from render method');
+    return (
+      <div className="App">
+        <h1>React Life Cycle Methods</h1>
+        <Count
+          count={this.state.count}
+          addOne={this.addOne}
+          minOne={this.minOne}
+        />
+        <div className="coins">
+          <Coins coins={coins} />;
+
+        </div>
+
+      </div>
+    );
+  }
+}
+
+export default App;
+
+
